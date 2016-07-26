@@ -6,18 +6,28 @@
  * User Configuration.
  **********************************************************************************************/
 /** Map relative paths to URLs. */
-const map: any = {
+const map:any = {
+  'jointjs': 'vendor/jointjs/dist/joint.js',
+  'jquery': 'vendor/backbone/backbone.js',
+  'backbone': 'vendor/backbone/backbone.js',
+  'lodash': 'vendor/lodash/index.js',
+  'underscore': 'vendor/underscore/underscore.js',
 };
 
 /** User packages configuration. */
-const packages: any = {
+const packages:any = {
+  'jointjs': { defaultExtension: 'js' },
+  'jquery': { defaultExtension: 'js' },
+  'backbone': { defaultExtension: 'js' },
+  'lodash': { defaultExtension: 'js' },
+  'underscore': { defaultExtension: 'js' },
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 /***********************************************************************************************
  * Everything underneath this line is managed by the CLI.
  **********************************************************************************************/
-const barrels: string[] = [
+const barrels:string[] = [
   // Angular specific barrels.
   '@angular/core',
   '@angular/common',
@@ -27,33 +37,39 @@ const barrels: string[] = [
   '@angular/router',
   '@angular/platform-browser',
   '@angular/platform-browser-dynamic',
-
+  'symbol-observable',
   // Thirdparty barrels.
   'rxjs',
-
+  'jointjs',
+  'jquery',
+  'backbone',
+  'lodash',
+  'underscore',
   // App specific barrels.
   'app',
   'app/shared',
+  'app/joint-js',
   /** @cli-barrel */
 ];
 
-const cliSystemConfigPackages: any = {};
-barrels.forEach((barrelName: string) => {
-  cliSystemConfigPackages[barrelName] = { main: 'index' };
+const cliSystemConfigPackages:any = {};
+barrels.forEach((barrelName:string) => {
+  cliSystemConfigPackages[barrelName] = {main: 'index'};
 });
 
 /** Type declaration for ambient System. */
-declare var System: any;
+declare var System:any;
 
 // Apply the CLI SystemJS configuration.
 System.config({
   map: {
     '@angular': 'vendor/@angular',
     'rxjs': 'vendor/rxjs',
+    'symbol-observable': 'vendor/symbol-observable',
     'main': 'main.js'
   },
   packages: cliSystemConfigPackages
 });
 
 // Apply the user's configuration.
-System.config({ map, packages });
+System.config({map, packages});

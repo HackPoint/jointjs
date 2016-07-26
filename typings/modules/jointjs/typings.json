@@ -1,0 +1,12 @@
+{
+  "resolution": "main",
+  "tree": {
+    "src": "https://raw.githubusercontent.com/CaselIT/typings-jointjs/f09952876a53bb4310de7e41e79c78aec1261e10/typings.json",
+    "raw": "registry:npm/jointjs#0.9.7+20160707180857",
+    "main": "index.d.ts",
+    "version": "0.9.7",
+    "global": false,
+    "name": "jointjs",
+    "type": "typings"
+  }
+}

@@ -1,10 +1,15 @@
 {
-  "ambientDevDependencies": {
+  "globalDevDependencies": {
     "angular-protractor": "registry:dt/angular-protractor#1.5.0+20160425143459",
     "jasmine": "registry:dt/jasmine#2.2.0+20160412134438",
     "selenium-webdriver": "registry:dt/selenium-webdriver#2.44.0+20160317120654"
   },
-  "ambientDependencies": {
-    "es6-shim": "registry:dt/es6-shim#0.31.2+20160317120654"
+  "globalDependencies": {
+    "backbone": "registry:dt/backbone#1.0.0+20160316155526",
+    "backbone-global": "registry:dt/backbone-global#1.0.0+20160626232945",
+    "es6-shim": "registry:dt/es6-shim#0.31.2+20160317120654",
+    "jointjs": "registry:dt/jointjs#0.9.3+20160323123346",
+    "lodash": "registry:dt/lodash#3.10.0+20160720001309",
+    "underscore": "registry:dt/underscore#1.7.0+20160720002543"
   }
 }

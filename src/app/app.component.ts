@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
+import {JointJsComponent} from "./joint-js/joint-js.component";
 
 @Component({
   moduleId: module.id,
-  selector: '-root',
+  selector: 'app',
   templateUrl: 'app.component.html',
-  styleUrls: ['app.component.css']
+  styleUrls: ['app.component.css'],
+  directives: [JointJsComponent]
 })
 export class AppComponent {
-  title = 'app works!';
+  title = 'Joint JS demo Angular2';
 }

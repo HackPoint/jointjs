@@ -10,22 +10,29 @@
   {{/unless}}
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.3.1/backbone-min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jointjs/0.9.3/joint.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jointjs/0.9.3/joint.js"></script>
+
+  <script>
+    SVGElement.prototype.getTransformToElement = SVGElement.prototype.getTransformToElement || function(toElement) {
+        return toElement.getScreenCTM().inverse().multiply(this.getScreenCTM());
+      };
+  </script>
 </head>
 <body>
-  <-root>Loading...</-root>
-
-  
+  <app>Loading...</app>
 
     {{#each scripts.polyfills}}
     <script src="{{.}}"></script>
     {{/each}}
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+
     <script>
       System.import('system-config.js').then(function () {
         System.import('main');
       }).catch(console.error.bind(console));
     </script>
-
-  
-
 </body>
 </html>
