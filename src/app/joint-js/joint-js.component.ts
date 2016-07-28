@@ -1,3 +1,5 @@
+/// <reference path="../../../typings/globals/underscore/index.d.ts" />
+/// <reference path="../../../typings/globals/backbone-global/index.d.ts" />
 /// <reference path="../../../typings/globals/backbone/index.d.ts" />
 /// <reference path="../../../typings/globals/jointjs/index.d.ts" />
 
